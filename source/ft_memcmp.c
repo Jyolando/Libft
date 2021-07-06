@@ -1,29 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jyolando <jyolando@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/04 23:48:35 by jyolando          #+#    #+#             */
-/*   Updated: 2021/07/04 23:48:35 by jyolando         ###   ########.fr       */
+/*   Created: 2021/07/07 00:06:44 by jyolando          #+#    #+#             */
+/*   Updated: 2021/07/07 00:06:44 by jyolando         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// ! change
-
 #include "libft.h"
 
-void *ft_memmove(void *dest, const void *src, size_t n)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	char *pdest;
-	char *psrc;
+	char *ps1;
+	char *ps2;
 
-	pdest = (char *)dest;
-	psrc = (char *)src;
-	while (n-- && *psrc)
+	ps1 = (char *)s1;
+	ps2 = (char *)s2;
+	while (n-- && (*ps1 || *ps2))
 	{
-		*(pdest)++ = *(psrc)++;
+		if (*ps1 - *ps2 != 0)
+			return (*ps1 - *ps2);
+		ps1++;
+		ps2++;
 	}
-	return (dest);
+	return (0);
 }
