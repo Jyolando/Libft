@@ -6,8 +6,8 @@
 | READY | SUBJECT | READY | SUBJECT |
 |:-----:|:--------|:-----:|:--------|
 | ✔️ | **memset** | ❌ | **strrchr**
-| ❌ | **bzero** | ❌ | **strnchr**
-| ✔️ | **memcpy** | ❌ | **strncmp**
+| ❌ | **bzero** | ✔️ | **strnchr**
+| ✔️ | **memcpy** | ✔️ | **strncmp**
 | ✔️ | **memccpy** | ✔️ | **atoi**
 | ❌ | **memmove** | ✔️ | **isalpha**
 | ✔️ | **memchr** | ✔️ | **isdigit**
