@@ -1,26 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jyolando <jyolando@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/04 13:57:27 by jyolando          #+#    #+#             */
-/*   Updated: 2021/07/04 13:57:27 by jyolando         ###   ########.fr       */
+/*   Created: 2021/07/07 22:30:33 by jyolando          #+#    #+#             */
+/*   Updated: 2021/07/07 22:30:33 by jyolando         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "libft.h"
+#include <stdlib.h>
 
-typedef unsigned long size_t;
-typedef int bool;
+char	*ft_strjoin(char const *s1, char const *s2)
+{
+	char	*str;
+	int		i;
 
-# define TRUE 1
-# define FALSE 0
-# define NULL (void *)0
-
-void	*ft_memset(void *s, int c, size_t n);
-size_t	ft_strlen(const char *s);
-
-#endif
+	i = 0;
+	str = (char *)malloc(ft_strlen(s1) + ft_strlen(s2));
+	while (*s1 || *s2)
+	{
+		if (*s1)
+			str[i] = *(s1)++;
+		else
+			str[i] = *(s2)++;
+		i++;
+	}
+	return (str);
+}

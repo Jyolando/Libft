@@ -1,26 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jyolando <jyolando@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/04 13:57:27 by jyolando          #+#    #+#             */
-/*   Updated: 2021/07/04 13:57:27 by jyolando         ###   ########.fr       */
+/*   Created: 2021/07/07 22:18:31 by jyolando          #+#    #+#             */
+/*   Updated: 2021/07/07 22:18:31 by jyolando         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "libft.h"
+#include <stdlib.h>
 
-typedef unsigned long size_t;
-typedef int bool;
+char	*ft_substr(char const *s, unsigned int start, size_t len)
+{
+	char	*str;
+	size_t	i;
 
-# define TRUE 1
-# define FALSE 0
-# define NULL (void *)0
-
-void	*ft_memset(void *s, int c, size_t n);
-size_t	ft_strlen(const char *s);
-
-#endif
+	i = 0;
+	str = (char *)malloc(len);
+	if (str == NULL)
+		return (NULL);
+	while (start--)
+		s++;
+	while (i < len && *s)
+	{
+		str[i++] = *(s)++;
+	}
+	return (str);
+}
