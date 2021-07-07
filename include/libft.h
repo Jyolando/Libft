@@ -16,6 +16,6 @@
 # include <stdlib.h>
 
 void	*ft_memset(void *s, int c, size_t n);
-void	ft_strlen(char *str);
+int		ft_strlen(char *str);
 
 #endif
