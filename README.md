@@ -5,21 +5,21 @@
 
 | READY | SUBJECT | READY | SUBJECT |
 |:-----:|:--------|:-----:|:--------|
-| ✔️ | **memset** | ❌ | **strrchr**
-| ❌ | **bzero** | ✔️ | **strnchr**
+| ✔️ | **memset** | ✔️ | **strrchr**
+| ✔️ | **bzero** | ✔️ | **strnchr**
 | ✔️ | **memcpy** | ✔️ | **strncmp**
 | ✔️ | **memccpy** | ✔️ | **atoi**
-| ❌ | **memmove** | ✔️ | **isalpha**
+| ✔️ | **memmove** | ✔️ | **isalpha**
 | ✔️ | **memchr** | ✔️ | **isdigit**
 | ✔️ | **memcmp** | ✔️ | **isalnum**
 | ✔️ | **strlen** | ✔️ | **isascii**
-| ❌ | **strlcpy** | ✔️ | **isprint**
-| ❌ | **strlcat** | ✔️ | **toupper**
+| ✔️ | **strlcpy** | ✔️ | **isprint**
+| ✔️ | **strlcat** | ✔️ | **toupper**
 | ✔️ | **strchr** | ✔️ | **tolower**
 | ✔️ | **calloc** | ✔️ | **strdup**
 | ✔️ | **ft_substr** | ✔️ | **ft_strjoin**
-| ❌ | **ft_strtrim** | ❌ | **ft_split**
-| ❌ | **ft_itoa** | ❌ | **ft_strmapi**
+| ❌ | **ft_strtrim** | ✔️ | **ft_split**
+| ✔️ | **ft_itoa** | ❌ | **ft_strmapi**
 | ❌ | **ft_putchar_fd** | ❌ | **ft_putstr_fd**
 | ❌ | **ft_putendl_fd** | ❌ | **ft_putnbr_fd**
 
