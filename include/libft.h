@@ -23,4 +23,6 @@ typedef int bool;
 void	*ft_memset(void *s, int c, size_t n);
 size_t	ft_strlen(const char *s);
 
+void	ft_putstr_fd(char *s, int fd);
+
 #endif
