@@ -1,24 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jyolando <jyolando@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/08 17:10:51 by jyolando          #+#    #+#             */
-/*   Updated: 2021/07/08 17:10:51 by jyolando         ###   ########.fr       */
+/*   Created: 2021/07/07 00:01:15 by jyolando          #+#    #+#             */
+/*   Updated: 2021/07/07 00:01:15 by jyolando         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+void	*ft_memchr(const void *s, int c, unsigned long n)
 {
-	char *str;
+	char	*str;
 
 	str = (char *)s;
-	while (n-- && *str)
+	while (n--)
 	{
-		*(str)++ = 0;
+		if (*str == c)
+			return (str);
+		else
+			str++;
 	}
+	return (NULL);
 }

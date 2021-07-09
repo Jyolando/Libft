@@ -1,18 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jyolando <jyolando@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/04 16:47:09 by jyolando          #+#    #+#             */
-/*   Updated: 2021/07/04 16:47:09 by jyolando         ###   ########.fr       */
+/*   Created: 2021/07/04 16:52:24 by jyolando          #+#    #+#             */
+/*   Updated: 2021/07/04 16:52:24 by jyolando         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalpha(int c)
+int	ft_isdigit(int c)
 {
-	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
+	unsigned char	ch;
+
+	ch = (unsigned char)c;
+	if (ch >= '0' && ch <= '9')
 		return (1);
 	else
 		return (0);

@@ -1,29 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jyolando <jyolando@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/04 13:57:27 by jyolando          #+#    #+#             */
-/*   Updated: 2021/07/04 13:57:27 by jyolando         ###   ########.fr       */
+/*   Created: 2021/07/04 16:47:09 by jyolando          #+#    #+#             */
+/*   Updated: 2021/07/04 16:47:09 by jyolando         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+int	ft_isalpha(int c)
+{
+	unsigned char	ch;
 
-typedef int bool;
-
-# define TRUE 1
-# define FALSE 0
-# define NULL (void *)0
-
-void	*ft_memset(void *s, int c, unsigned long n);
-unsigned long	ft_strlen(const char *s);
-char	*ft_substr(char const *s, unsigned int start, unsigned long len);
-
-void	ft_putchar_fd(char c, int fd);
-void	ft_putstr_fd(char *s, int fd);
-
-#endif
+	ch = (unsigned char)c;
+	if ((ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z'))
+		return (1);
+	else
+		return (0);
+}

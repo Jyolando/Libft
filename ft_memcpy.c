@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jyolando <jyolando@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/08 19:08:30 by jyolando          #+#    #+#             */
-/*   Updated: 2021/07/08 19:08:30 by jyolando         ###   ########.fr       */
+/*   Created: 2021/07/04 21:00:10 by jyolando          #+#    #+#             */
+/*   Updated: 2021/07/04 21:00:10 by jyolando         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t size)
+void	*ft_memcpy(void *dest, const void *src, unsigned long n)
 {
-	size_t	i;
+	char	*str;
+	char	*source;
 
-	i = 0;
-	while (*src && size-- > 0)
+	str = (char *)dest;
+	source = (char *)src;
+	while (n-- && *source)
 	{
-		*(dst)++ = *(src)++;
-		i++;
+		*(str)++ = *(source)++;
 	}
-	*dst = 0;
-	return (i);
+	return (str);
 }

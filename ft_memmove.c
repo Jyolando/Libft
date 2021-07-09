@@ -1,31 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memccpy.c                                       :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jyolando <jyolando@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/04 22:58:35 by jyolando          #+#    #+#             */
-/*   Updated: 2021/07/04 22:58:35 by jyolando         ###   ########.fr       */
+/*   Created: 2021/07/08 17:41:16 by jyolando          #+#    #+#             */
+/*   Updated: 2021/07/08 17:41:16 by jyolando         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memccpy(void *dest, void *src, int c, size_t n)
+void	*ft_memmove(void *dest, const void *src, unsigned long n)
 {
 	char	*pdest;
 	char	*psrc;
 
 	pdest = (char *)dest;
 	psrc = (char *)src;
-	while (n--)
+	if (pdest < psrc)
 	{
-		*pdest = *(psrc)++;
-		if (*(pdest)++ == c)
-		{
-			return (dest);
-		}
+		while (n--)
+			*(pdest)++ = *(psrc)++;
 	}
-	return (0);
+	else
+	{
+		pdest = pdest + (n - 1);
+		psrc = psrc + (n - 1);
+		while (n--)
+			*(pdest)-- = *(psrc)--;
+	}
+	return (dest);
 }

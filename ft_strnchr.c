@@ -1,25 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_strnchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jyolando <jyolando@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/08 00:34:42 by jyolando          #+#    #+#             */
-/*   Updated: 2021/07/08 01:25:28 by jyolando         ###   ########.fr       */
+/*   Created: 2021/07/08 00:51:40 by jyolando          #+#    #+#             */
+/*   Updated: 2021/07/09 23:46:44 by jyolando         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+char	*ft_strnchr(const char *s, unsigned long count, int c)
 {
-	while (n-- && (*s1 || *s2))
+	char	*str;
+
+	str = (char *)s;
+	while (count-- && *str)
 	{
-		if (*s1 - *s2 != 0)
-			return (*s1 - *s2);
-		s1++;
-		s2++;
+		if (*str == c)
+			return (str);
+		str++;
 	}
-	return (0);
+	return (NULL);
 }

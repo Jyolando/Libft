@@ -30,9 +30,7 @@ char	*ft_itoa(int n)
 {
 	char	*ns;
 	size_t	numsize;
-	size_t	i;
 
-	i = 0;
 	numsize = ft_numsize(n);
 	ns = (char *)malloc(ft_numsize(n) + 1);
 	if (ns == NULL)
