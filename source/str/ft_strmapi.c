@@ -1,30 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jyolando <jyolando@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/08 19:32:30 by jyolando          #+#    #+#             */
-/*   Updated: 2021/07/08 19:32:30 by jyolando         ###   ########.fr       */
+/*   Created: 2021/07/09 22:08:56 by jyolando          #+#    #+#             */
+/*   Updated: 2021/07/09 22:08:56 by jyolando         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
-unsigned long	ft_strlcat(char *dst, const char *src, unsigned long size)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	unsigned long	i;
+	char			*str;
+	unsigned int	index;
 
-	i = 0;
-	while (*(dst)++)
-		i++;
-	dst--;
-	while (*src && size-- > 0)
+	index = 0;
+	str = (char *)malloc(ft_strlen(s));
+	if (str == NULL)
+		return (NULL);
+	while (*s)
 	{
-		*(dst)++ = *(src)++;
-		i++;
+		str[index] = f(index, *(s)++);
+		index++;
 	}
-	*dst = 0;
-	return (i);
+	return (str);
 }
