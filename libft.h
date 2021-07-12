@@ -13,12 +13,14 @@
 #ifndef LIBFT_H
 # define LIBFT_H
 
-typedef unsigned long size_t;
+# include <stdlib.h>
+# include <unistd.h>
 typedef int bool;
 
 # define TRUE 1
 # define FALSE 0
-# define NULL (void *)0
+
+int	ft_atoi(const char *str);
 
 // ft_alnum checks whether the passed character is a number or a letter
 int	ft_isalnum(int c);
@@ -34,6 +36,8 @@ int	ft_isdigit(int c);
 
 // ft_isprint checks whether the passed character is a character from the printable section in the ascii table
 int	ft_isprint(int c);
+int	ft_tolower(int c);
+int	ft_toupper(int c);
 int	ft_memcmp(const void *s1, const void *s2, unsigned long n);
 int	ft_strncmp(const char *s1, const char *s2, unsigned long n);
 
@@ -55,7 +59,7 @@ unsigned long	ft_strlen(const char *s);
 
 void	ft_bzero(void *s, unsigned long n);
 void	*ft_calloc(size_t nmemb, size_t size);
-void	*ft_memccpy(void *dest, void *src, int c, unsigned long n);
+void	*ft_memccpy(void *dest, const void *src, int c, unsigned long n);
 void	*ft_memchr(const void *s, int c, unsigned long n);
 void	*ft_memcpy(void *dest, const void *src, unsigned long n);
 void	*ft_memmove(void *dest, const void *src, unsigned long n);
