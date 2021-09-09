@@ -2,6 +2,7 @@
 
 *Libft is a library that implements the primary necessary set of functions for programming in the C language.*
 
+[libft.pdf](./libft_(new).en.pdf)
 
 | READY | SUBJECT | READY | SUBJECT |
 |:-----:|:--------|:-----:|:--------|
