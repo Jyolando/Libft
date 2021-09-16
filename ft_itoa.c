@@ -10,43 +10,42 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 #include <stdlib.h>
 
-static size_t	ft_numsize(int n)
-{
-	int	size;
 
-	size = 0;
-	while (n / 10 != 0)
-	{
+static int ft_abs (int n)
+{
+	return((n < 0) ? n *= -1 : n);
+}
+
+static int ft_numlen(int n, int neg) {
+	int size;
+
+	size = 1;
+	while (n /= 10)
 		size++;
-		n /= 10;
-	}
-	return (size + 1);
+
+	return (size + neg);
 }
 
 char	*ft_itoa(int n)
 {
-	char	*ns;
-	size_t	numsize;
+	int nsize;
+	char *nchar;
+	int neg;
 
-	numsize = ft_numsize(n);
-	ns = (char *)malloc(ft_numsize(n) + 1);
-	if (ns == NULL)
-		return (NULL);
-	ns[numsize] = 0;
-	while (numsize--)
+	neg = (n < 0) ? 1 : 0;
+	nsize = ft_numlen(n, neg);
+	if(nchar = (char *)malloc(nsize))
 	{
-		if (n / 10 >= 0)
+		if (neg)
+			nchar[0] = '-';
+		nchar[nsize--] = '\0';
+		while (nsize >= neg)
 		{
-			ns[numsize] = (n % 10) + 48;
+			nchar[nsize--] = ft_abs(n % 10) + '0';
 			n /= 10;
 		}
-		else
-		{
-			ns[numsize] = n + 48;
-		}
 	}
-	return (ns);
+	return (nchar);
 }
