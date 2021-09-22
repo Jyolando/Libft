@@ -36,7 +36,7 @@ char	*ft_itoa(int n)
 
 	neg = (n < 0) ? 1 : 0;
 	nsize = ft_numlen(n, neg);
-	if(nchar = (char *)malloc(nsize))
+	if((nchar = (char *)malloc(nsize)))
 	{
 		if (neg)
 			nchar[0] = '-';
