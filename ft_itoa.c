@@ -12,31 +12,40 @@
 
 #include <stdlib.h>
 
-
-static int ft_abs (int n)
+static int	ft_abs(int n)
 {
-	return((n < 0) ? n *= -1 : n);
+	if (n < 0)
+		return (n * -1);
+	else
+		return (n);
 }
 
-static int ft_numlen(int n, int neg) {
-	int size;
+static int	ft_numlen(int n, int neg)
+{
+	int	size;
 
 	size = 1;
-	while (n /= 10)
+	while (n / 10)
+	{
 		size++;
-
+		n /= 10;
+	}
 	return (size + neg);
 }
 
 char	*ft_itoa(int n)
 {
-	int nsize;
-	char *nchar;
-	int neg;
+	int		nsize;
+	char	*nchar;
+	int		neg;
 
-	neg = (n < 0) ? 1 : 0;
+	if (n < 0)
+		neg = 1;
+	else
+		neg = 0;
 	nsize = ft_numlen(n, neg);
-	if((nchar = (char *)malloc(nsize)))
+	nchar = (char *)malloc(nsize);
+	if (nchar != NULL)
 	{
 		if (neg)
 			nchar[0] = '-';

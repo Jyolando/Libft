@@ -14,7 +14,7 @@
 
 void	*ft_memchr(const void *s, int c, unsigned long n)
 {
-	char *str;
+	char	*str;
 
 	str = (char *)s;
 	while (n--)
