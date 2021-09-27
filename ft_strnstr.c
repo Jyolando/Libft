@@ -1,27 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstsize.c                                       :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jyolando <jyolando@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/08 12:27:46 by jyolando          #+#    #+#             */
-/*   Updated: 2021/09/27 11:08:52 by jyolando         ###   ########.fr       */
+/*   Created: 2021/09/27 09:57:23 by jyolando          #+#    #+#             */
+/*   Updated: 2021/09/27 10:44:02 by jyolando         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_lstsize(t_list *lst)
+char	*ft_strnstr(const char *big, const char *little, size_t size)
 {
-	int	count;
+	size_t	i;
+	size_t	j;
 
-	count = 0;
-	while (lst->next != NULL)
+	if (!big)
+		return (NULL);
+	if (!little)
+		return ((char *)big);
+	i = 0;
+	while (big[i] && i < size)
 	{
-		count++;
-		lst = lst->next;
+		j = 0;
+		while (big[i + j] && little[j] && i + j < size
+			&& big[i + j] == little[j])
+			j++;
+		if (!little[j])
+			return ((char *)(big + i));
+		i++;
 	}
-
-	return (count);
+	return (NULL);
 }
