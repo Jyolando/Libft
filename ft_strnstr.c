@@ -6,7 +6,7 @@
 /*   By: jyolando <jyolando@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/27 09:57:23 by jyolando          #+#    #+#             */
-/*   Updated: 2021/09/27 10:44:02 by jyolando         ###   ########.fr       */
+/*   Updated: 2021/09/29 21:04:05 by jyolando         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ char	*ft_strnstr(const char *big, const char *little, size_t size)
 	size_t	i;
 	size_t	j;
 
-	if (!big)
+	if (!big && !little)
 		return (NULL);
-	if (!little)
+	if (!little[0] && little)
 		return ((char *)big);
 	i = 0;
 	while (big[i] && i < size)

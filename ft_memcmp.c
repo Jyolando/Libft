@@ -19,7 +19,7 @@ int	ft_memcmp(const void *s1, const void *s2, unsigned long n)
 
 	ps1 = (unsigned char *)s1;
 	ps2 = (unsigned char *)s2;
-	while (n-- && (*ps1 || *ps2))
+	while (n--)
 	{
 		if (*ps1 - *ps2 != 0)
 			return (*ps1 - *ps2);

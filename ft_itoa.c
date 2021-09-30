@@ -44,7 +44,7 @@ char	*ft_itoa(int n)
 	else
 		neg = 0;
 	nsize = ft_numlen(n, neg);
-	nchar = (char *)malloc(nsize);
+	nchar = (char *)malloc(nsize + 1);
 	if (nchar != NULL)
 	{
 		if (neg)
@@ -56,5 +56,6 @@ char	*ft_itoa(int n)
 			n /= 10;
 		}
 	}
+
 	return (nchar);
 }
