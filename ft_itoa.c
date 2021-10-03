@@ -56,6 +56,5 @@ char	*ft_itoa(int n)
 			n /= 10;
 		}
 	}
-
 	return (nchar);
 }

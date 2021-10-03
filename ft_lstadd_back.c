@@ -6,7 +6,7 @@
 /*   By: jyolando <jyolando@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/27 19:14:18 by jyolando          #+#    #+#             */
-/*   Updated: 2021/09/27 20:27:30 by jyolando         ###   ########.fr       */
+/*   Updated: 2021/09/30 14:01:10 by jyolando         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,7 @@
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
 	t_list *nlst;
-
 	nlst = *lst;
-
 	while (nlst->next != NULL)
 		nlst = nlst->next;
 	nlst->next = new;

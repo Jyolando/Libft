@@ -6,13 +6,13 @@
 /*   By: jyolando <jyolando@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/08 12:27:46 by jyolando          #+#    #+#             */
-/*   Updated: 2021/09/27 19:02:52 by jyolando         ###   ########.fr       */
+/*   Updated: 2021/10/03 10:50:35 by jyolando         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_lstsize(t_list *lst)
+int	ft_lstsize(t_list *lst)
 {
 	int	count;
 
@@ -24,6 +24,5 @@ int ft_lstsize(t_list *lst)
 		count++;
 		lst = lst->next;
 	}
-
 	return (count);
 }
