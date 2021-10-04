@@ -26,11 +26,14 @@ BONUS			=	ft_lstnew.c ft_lstsize.c ft_lstadd_front.c ft_lstlast.c \
 
 BONUS_OBJS		=	$(BONUS:.c=.o)
 
+<<<<<<< HEAD
 HEADER			=	libft.h
 
 CC 				= gcc
 CFLAGS			= -Wall -Werror -Wextra -I$(HEADER)
 
+=======
+>>>>>>> 79c0895bb5449a9ada89f62fda0518214603dd10
 RM				= rm -f
 
 NAME			= libft.a
