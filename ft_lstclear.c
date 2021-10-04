@@ -6,7 +6,7 @@
 /*   By: jyolando <jyolando@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/03 16:18:41 by jyolando          #+#    #+#             */
-/*   Updated: 2021/10/04 14:55:42 by jyolando         ###   ########.fr       */
+/*   Updated: 2021/10/04 16:12:04 by jyolando         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	t_list *plst;
-	t_list *plst_second;
+	t_list	*plst;
+	t_list	*plst_second;
 
 	plst = *lst;
 	plst_second = *lst;

@@ -6,7 +6,7 @@
 /*   By: jyolando <jyolando@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/04 11:44:07 by jyolando          #+#    #+#             */
-/*   Updated: 2021/10/04 14:06:13 by jyolando         ###   ########.fr       */
+/*   Updated: 2021/10/04 16:16:55 by jyolando         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 static size_t	ft_count(char const *s, char c)
 {
-	size_t  i;
-	size_t  count;
-	int     isWord;
+	size_t	i;
+	size_t	count;
+	int		isWord;
 
 	i = 0;
 	count = 0;
@@ -59,15 +59,13 @@ char	**ft_split(char const *s, char c)
 	int		start;
 	int		i;
 
-	if (!s)
-		return (NULL);
 	i = 0;
 	current_w = 0;
 	start = -1;
 	strings = malloc((ft_count(s, c) + 1) * sizeof(char *));
 	if (!strings)
 		return (NULL);
-	while((size_t)i <= ft_strlen(s))
+	while ((size_t)i <= ft_strlen(s))
 	{
 		if (s[i] != c && start < 0)
 			start = i;
