@@ -21,10 +21,10 @@ static bool	ft_check_char(char c, char const *set)
 	while (set[index])
 	{
 		if (set[index] == c)
-			return (TRUE);
+			return (1);
 		index++;
 	}
-	return (FALSE);
+	return (0);
 }
 
 char	*ft_strtrim(char const *s1, char const *set)

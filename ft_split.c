@@ -3,95 +3,81 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jyolando <jyolando@student.21-school.ru    +#+  +:+       +#+        */
+/*   By: jyolando <jyolando@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/08 21:14:24 by jyolando          #+#    #+#             */
-/*   Updated: 2021/07/08 21:14:24 by jyolando         ###   ########.fr       */
+/*   Created: 2021/10/04 11:44:07 by jyolando          #+#    #+#             */
+/*   Updated: 2021/10/04 14:06:13 by jyolando         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
-static size_t	ft_words(char const *s, char c)
+static size_t	ft_count(char const *s, char c)
 {
-	size_t	count;
-	size_t	pos;
-	bool	isWord;
+	size_t  i;
+	size_t  count;
+	int     isWord;
 
-	pos = 0;
+	i = 0;
 	count = 0;
-	isWord = FALSE;
-	while (s[pos])
+	isWord = 0;
+	while (s[i])
 	{
-		if (s[pos] == c)
-		{
-			isWord = FALSE;
-		}
-		else if (s[pos] != c && isWord == FALSE)
+		if (s[i] == c)
+			isWord = 0;
+		else if (s[i] != c && !isWord)
 		{
 			count++;
-			isWord = TRUE;
+			isWord = 1;
 		}
-		pos++;
+		i++;
 	}
 	return (count);
 }
 
-static size_t	*ft_strlen_st(size_t pos, char const *s, char c)
+static char	*split_strdup(char const *s, int start, int end)
 {
-	size_t	*res;
-	size_t	size;
-
-	res = (size_t *)malloc(2 * 4);
-	size = 0;
-	while (s[pos] == c)
-		pos++;
-	while (s[pos] != c && s[pos])
-	{
-		size++;
-		pos++;
-	}
-	res[0] = size;
-	res[1] = pos;
-	return (res);
-}
-
-static char	*ft_putchar(size_t pos, char const *s, char *str, char c)
-{
+	char	*str;
 	size_t	i;
 
 	i = 0;
-	while (s[pos] == c)
-		pos++;
-	while (s[pos] != c && s[pos])
+	str = (char *)malloc(end - start + 1);
+	if (!str)
+		return (NULL);
+	while (start < end)
 	{
-		str[i++] = s[pos++];
+		str[i++] = s[start++];
 	}
+	str[i] = '\0';
 	return (str);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	char	**strs;
-	size_t	count;
-	size_t	i;
-	size_t	j;
+	char	**strings;
+	size_t	current_w;
+	int		start;
+	int		i;
 
-	j = 0;
-	i = 0;
-	count = ft_words(s, c);
-	strs = (char **)malloc(count + 1);
-	if (strs == NULL)
+	if (!s)
 		return (NULL);
-	while (i < count)
+	i = 0;
+	current_w = 0;
+	start = -1;
+	strings = malloc((ft_count(s, c) + 1) * sizeof(char *));
+	if (!strings)
+		return (NULL);
+	while((size_t)i <= ft_strlen(s))
 	{
-		strs[i] = (char *)malloc(ft_strlen_st(j, s, c)[0]);
-		if (strs[i] == NULL)
-			return (NULL);
-		ft_putchar(j, s, strs[i++], c);
-		j = ft_strlen_st(j, s, c)[1];
+		if (s[i] != c && start < 0)
+			start = i;
+		else if ((s[i] == c || (size_t)i == ft_strlen(s)) && start >= 0)
+		{
+			strings[current_w++] = split_strdup(s, start, i);
+			start = -1;
+		}
+		i++;
 	}
-	strs[i] = NULL;
-	return (strs);
+	strings[current_w] = NULL;
+	return (strings);
 }
