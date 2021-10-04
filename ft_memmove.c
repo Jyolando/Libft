@@ -12,13 +12,13 @@
 
 #include "libft.h"
 
-void	*ft_memmove(void *dest, const void *src, unsigned long n)
+void	*ft_memmove(void *dest, const void *src, size_t n)
 {
 	char	*pdest;
 	char	*psrc;
 
 	if (!src && !dest)
-		return (dest);
+		return (NULL);
 	pdest = (char *)dest;
 	psrc = (char *)src;
 	if (pdest < psrc)
@@ -35,3 +35,5 @@ void	*ft_memmove(void *dest, const void *src, unsigned long n)
 	}
 	return (dest);
 }
+
+// hello - ello - llo - 3

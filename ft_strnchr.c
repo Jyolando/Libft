@@ -6,13 +6,13 @@
 /*   By: jyolando <jyolando@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/08 00:51:40 by jyolando          #+#    #+#             */
-/*   Updated: 2021/07/09 23:46:44 by jyolando         ###   ########.fr       */
+/*   Updated: 2021/10/04 21:42:50 by jyolando         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnchr(const char *s, unsigned long count, int c)
+char	*ft_strnchr(const char *s, size_t count, int c)
 {
 	char	*str;
 

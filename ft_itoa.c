@@ -10,14 +10,13 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 static int	ft_abs(int n)
 {
 	if (n < 0)
 		return (n * -1);
-	else
-		return (n);
+	return (n);
 }
 
 static int	ft_numlen(int n, int neg)
@@ -39,22 +38,20 @@ char	*ft_itoa(int n)
 	char	*nchar;
 	int		neg;
 
+	neg = 0;
 	if (n < 0)
 		neg = 1;
-	else
-		neg = 0;
 	nsize = ft_numlen(n, neg);
-	nchar = (char *)malloc(nsize + 1);
-	if (nchar != NULL)
+	nchar = (char *)malloc((nsize + 1) * sizeof(char));
+	if (!nchar)
+		return (NULL);
+	if (neg)
+		nchar[0] = '-';
+	nchar[nsize--] = '\0';
+	while (nsize >= neg)
 	{
-		if (neg)
-			nchar[0] = '-';
-		nchar[nsize--] = '\0';
-		while (nsize >= neg)
-		{
-			nchar[nsize--] = ft_abs(n % 10) + '0';
-			n /= 10;
-		}
+		nchar[nsize--] = ft_abs(n % 10) + '0';
+		n /= 10;
 	}
 	return (nchar);
 }
