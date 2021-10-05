@@ -39,7 +39,13 @@ char	*ft_strtrim(char const *s1, char const *set)
 		index++;
 	start = index;
 	if (!s1[start])
-		return ("\0");
+	{
+		newstr = (char *)malloc(1);
+		if (newstr == NULL)
+			return (NULL);
+		newstr[0] = '\0';
+		return (newstr);
+	}
 	while (s1[index + 1])
 		index++;
 	while (ft_check_char(s1[index], set))

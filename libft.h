@@ -15,10 +15,6 @@
 
 # include <stdlib.h>
 # include <unistd.h>
-# include <stdbool.h>
-
-# define TRUE 1
-# define FALSE 0
 
 typedef struct s_list
 {
@@ -57,6 +53,7 @@ size_t	ft_strlen(const char *s);
 void	ft_bzero(void *s, unsigned long n);
 void	*ft_calloc(size_t nmemb, size_t size);
 void	*ft_memccpy(void *dest, const void *src, int c, unsigned long n);
+void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 void	*ft_memchr(const void *s, int c, unsigned long n);
 void	*ft_memcpy(void *dest, const void *src, unsigned long n);
 void	*ft_memmove(void *dest, const void *src, unsigned long n);
