@@ -40,8 +40,8 @@ NAME			= libft.a
 
 all:			$(NAME)
 
-$(NAME):		$(OBJS)
-				ar rcs $(NAME) $(OBJS)
+$(NAME):		$(OBJS) $(HEADER)
+				ar rcs $(NAME) $?
 
 clean:
 				$(RM) $(OBJS) $(BONUS_OBJS)
@@ -51,5 +51,5 @@ fclean:			clean
 
 re:				fclean $(NAME)
 
-bonus:			$(OBJS) $(BONUS_OBJS)
-				ar rcs $(NAME) $(OBJS) $(BONUS_OBJS)
+bonus:			$(BONUS_OBJS) $(HEADER)
+				ar rcs $(NAME) $?
