@@ -9,7 +9,7 @@
 | ✔️ | **memset** | ✔️ | **strrchr**
 | ✔️ | **bzero** | ✔️ | **strnstr**
 | ✔️ | **memcpy** | ✔️ | **strncmp**
-| ✔️ | **memccpy** | ✔️ | **atoi**
+| ✔️ | **striteri** | ✔️ | **atoi**
 | ✔️ | **memmove** | ✔️ | **isalpha**
 | ✔️ | **memchr** | ✔️ | **isdigit**
 | ✔️ | **memcmp** | ✔️ | **isalnum**
